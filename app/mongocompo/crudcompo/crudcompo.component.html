@@ -1,0 +1,136 @@
+<div class="container">
+  <table style="color:white" class="table table-bordered">
+    <tr style="background-color:blue">
+        <th>Product Id</th>
+        <th>Product Name</th> 
+        <th>Product Cost</th>
+    </tr>
+    <tr *ngFor="let x of fetchdata" style="background-color:red">
+        <td>{{x.p_id}}</td>
+        <td>{{x.p_name}}</td>
+        <td>{{x.p_cost}}</td>
+    </tr>
+</table>
+<h1>{{fetchdata | json}}</h1>
+<br><br>
+<hr>
+<form>
+    <div class="form-group row">
+        <div class="col-xs-4">
+            <label class="control-label" for="ex1">P_Id:</label>
+            <input type="number" id="ex1" class="form-control" name="id" [(ngModel)]="id">
+        </div>
+        <div class="col-xs-4">
+                <label class="control-label" for="ex2">P_Name:</label>
+                <input type="text" id="ex2" class="form-control" name="name" [(ngModel)]="name" >
+        </div>
+        <div class="col-xs-4">
+                <label class="control-label" for="ex3">P_Cost:</label>
+                <input type="number" id="ex3" class="form-control" name="cost" [(ngModel)]="cost">
+        </div>
+    </div>
+    <button class="btn btn-success" (click)="insert({'p_id':id,'p_name':name,'p_cost':cost})">Insert</button><br>
+</form>
+<h1>{{insertstatus | json}}</h1>
+<br><br>
+<hr>
+<form>
+    <div class="form-group row">
+        <div class="col-xs-4">
+            <label class="control-label" for="ex4">P_Id:</label>
+            <input type="number" id="ex4" class="form-control" name="id1" [(ngModel)]="id1">
+        </div>
+        <div class="col-xs-4">
+                <label class="control-label" for="ex5">P_Name:</label>
+                <input type="text" id="ex5" class="form-control" name="name1" [(ngModel)]="name1" >
+        </div>
+        <div class="col-xs-4">
+                <label class="control-label" for="ex6">P_Cost:</label>
+                <input type="number" id="ex6" class="form-control" name="cost1" [(ngModel)]="cost1">
+        </div>
+    </div>
+    <button class="btn btn-info" (click)="update({'p_id':id1,'p_name':name1,'p_cost':cost1})">Update</button><br>
+</form>
+<h1>{{updatestatus | json}}</h1>
+<br><br>
+<hr>
+<form>
+    <div class="form-group row">
+        <div class="col-xs-4">
+            <label class="control-label" for="ex7">P_Id:</label>
+            <input type="number" id="ex7" class="form-control" name="id2" [(ngModel)]="id2">
+        </div>
+    </div>
+    <button class="btn btn-danger" (click)="delete({'p_id':id2})">Delete</button><br>
+</form>
+<h1>{{deletestatus | json}}</h1>
+</div>
+<!--
+<div class="container">
+  <h1>Product Table goes here.....</h1>
+  <table style="color:white" class="table table-bordered">
+      <tr style="background-color:blue">
+          <th>Product Id</th>
+          <th>Product Name</th> 
+          <th>Product Cost</th>
+      </tr>
+      <tr *ngFor="let x of products" style="background-color:red">
+          <td>{{x.p_id}}</td>
+          <td>{{x.p_name}}</td>
+          <td>{{x.p_cost}}</td>
+      </tr>
+  </table>
+  <br><br>
+  <hr>
+  <form>
+      <div class="form-group row">
+          <div class="col-xs-4">
+              <label class="control-label" for="ex1">P_Id:</label>
+              <input type="number" id="ex1" class="form-control" name="id" [(ngModel)]="id">
+          </div>
+          <div class="col-xs-4">
+                  <label class="control-label" for="ex2">P_Name:</label>
+                  <input type="text" id="ex2" class="form-control" name="name" [(ngModel)]="name" >
+          </div>
+          <div class="col-xs-4">
+                  <label class="control-label" for="ex3">P_Cost:</label>
+                  <input type="number" id="ex3" class="form-control" name="cost" [(ngModel)]="cost">
+          </div>
+      </div>
+      <button class="btn btn-success" (click)="insertData({'p_id':id,'p_name':name,'p_cost':cost})">Insert</button><br>
+  </form>
+  <h1>{{insertStatus | json}}</h1>
+  <br><br>
+  <hr>
+  <form>
+      <div class="form-group row">
+          <div class="col-xs-4">
+              <label class="control-label" for="ex4">P_Id:</label>
+              <input type="number" id="ex4" class="form-control" name="id1" [(ngModel)]="id1">
+          </div>
+          <div class="col-xs-4">
+                  <label class="control-label" for="ex5">P_Name:</label>
+                  <input type="text" id="ex5" class="form-control" name="name1" [(ngModel)]="name1" >
+          </div>
+          <div class="col-xs-4">
+                  <label class="control-label" for="ex6">P_Cost:</label>
+                  <input type="number" id="ex6" class="form-control" name="cost1" [(ngModel)]="cost1">
+          </div>
+      </div>
+      <button class="btn btn-info" (click)="updateData({'p_id':id1,'p_name':name1,'p_cost':cost1})">Update</button><br>
+  </form>
+  <h1>{{updateStatus | json}}</h1>
+  <br><br>
+  <hr>
+  <form>
+      <div class="form-group row">
+          <div class="col-xs-4">
+              <label class="control-label" for="ex7">P_Id:</label>
+              <input type="number" id="ex7" class="form-control" name="id2" [(ngModel)]="id2">
+          </div>
+      </div>
+      <button class="btn btn-danger" (click)="deleteData({'p_id':id2})">Delete</button><br>
+  </form>
+  <h1>{{deleteStatus | json}}</h1>
+  </div>
+-->
